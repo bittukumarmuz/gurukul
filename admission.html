@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admission Form – Aditya Ranker Gurukul</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+      Aditya Ranker <span>Gurukul</span>
+    </a>
+    <ul class="nav-menu" id="desktopMenu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#courses"><i class="fas fa-book-open"></i> Courses</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact us</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn-register" onclick="openModal()">Register / Login</button>
+      <div class="hamburger" id="hamburger" onclick="toggleDropdown()">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+    </div>
+  </div>
+  <ul class="dropdown-menu" id="dropdownMenu">
+    <li><a href="index.html" onclick="closeDropdown()"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="admission.html" onclick="closeDropdown()"><i class="fas fa-user-plus"></i> Admission Form</a></li>
+    <li><a href="about.html" onclick="closeDropdown()"><i class="fas fa-info-circle"></i> About</a></li>
+    <li><a href="contact.html" onclick="closeDropdown()"><i class="fas fa-envelope"></i> Contact us</a></li>
+    <li><a href="result.html" onclick="closeDropdown()"><i class="fas fa-poll"></i> Result Checker</a></li>
+  </ul>
+</nav>
+
+<div style="height:68px;"></div>
+
+<section style="padding:60px 0;background:var(--offwhite);min-height:calc(100vh - 68px);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Join Us</div>
+      <h2 class="section-title">Admission <span>Form</span></h2>
+      <div class="section-line"></div>
+      <p class="section-desc">Apna naam register karein — Aditya Sir 24 ghante mein contact karenge.</p>
+    </div>
+
+    <div class="form-card" style="max-width:660px;">
+      <h3>📋 Admission Application</h3>
+      <p class="form-sub">Sabhi * fields zaroori hain.</p>
+
+      <!--
+        ★ FORMSPREE READY — tumhara link already connected hai!
+        Kuch change karne ki zaroorat nahi.
+      -->
+      <form id="admissionForm"
+            action="https://formspree.io/f/xkokrydq"
+            method="POST"
+            onsubmit="return handleAdmission(this)">
+
+        <input type="hidden" name="_subject" value="🎓 New Admission – Aditya Ranker Gurukul"/>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-user"></i> Student Name *</label>
+            <input type="text" name="Student Name" id="studentName" placeholder="Poora naam likhein" required/>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-user-tie"></i> Father's Name *</label>
+            <input type="text" name="Father Name" id="fatherName" placeholder="Pita ji ka naam" required/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-phone"></i> Contact Number *</label>
+            <input type="tel" name="Contact Number" id="contact" placeholder="10-digit number" maxlength="10" required/>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-graduation-cap"></i> Class *</label>
+            <select name="Class" id="classSelect" required>
+              <option value="">-- Class Chunein --</option>
+              <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+              <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+              <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+              <option>Class 10</option>
+              <option>Class 11 – Science</option><option>Class 11 – Arts</option>
+              <option>Class 12 – Science</option><option>Class 12 – Arts</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-map-marker-alt"></i> Village / Area *</label>
+          <input type="text" name="Village" id="village" placeholder="Gaanv ya area ka naam" required/>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <i class="fas fa-paper-plane"></i> Submit Application
+        </button>
+
+        <div class="success-msg" id="admissionSuccess">
+          <i class="fas fa-check-circle"></i>
+          आवेदन सफलतापूर्वक भेज दिया गया! 🎉
+          <br><small>Aditya Sir 24 ghante mein aapse contact karenge.</small>
+        </div>
+        <div class="error-msg" id="admissionError">
+          <i class="fas fa-times-circle"></i> Kuch galat hua. Dobara try karein.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border:none;padding:20px 0;">
+      <p>© 2024 <span>Aditya Ranker Gurukul</span>. All Rights Reserved.</p>
+      <p>Made with <span>❤️</span> by <span>GenCubix Tech Lab</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-tabs">
+      <div class="modal-tab active" id="mtab-login" onclick="switchModalTab('login')">Login</div>
+      <div class="modal-tab" id="mtab-register" onclick="switchModalTab('register')">Register</div>
+    </div>
+    <div class="modal-form active" id="mf-login">
+      <div class="form-group"><label><i class="fas fa-phone"></i> Mobile</label><input type="tel" placeholder="Mobile"/></div>
+      <div class="form-group"><label><i class="fas fa-lock"></i> Password</label><input type="password" placeholder="Password"/></div>
+      <button class="btn-submit" onclick="alert('Coming soon!')"><i class="fas fa-sign-in-alt"></i> Login</button>
+    </div>
+    <div class="modal-form" id="mf-register">
+      <div class="form-group"><label><i class="fas fa-user"></i> Name</label><input type="text" placeholder="Full name"/></div>
+      <div class="form-group"><label><i class="fas fa-phone"></i> Mobile</label><input type="tel" placeholder="10-digit"/></div>
+      <div class="form-group"><label><i class="fas fa-lock"></i> Password</label><input type="password" placeholder="Password"/></div>
+      <button class="btn-submit" onclick="alert('Coming soon!')"><i class="fas fa-user-plus"></i> Register</button>
+    </div>
+  </div>
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+<script src="script.js"></script>
+<script>
+/* Admission form handler */
+function handleAdmission(form) {
+  var name    = document.getElementById('studentName').value.trim();
+  var father  = document.getElementById('fatherName').value.trim();
+  var contact = document.getElementById('contact').value.trim();
+  var cls     = document.getElementById('classSelect').value;
+  var village = document.getElementById('village').value.trim();
+
+  if (!name || !father || !contact || !cls || !village) {
+    alert('⚠️ Sabhi * fields bharna zaroori hai!'); return false;
+  }
+  if (contact.length !== 10 || isNaN(contact)) {
+    alert('⚠️ 10-digit valid mobile number daalo!'); return false;
+  }
+
+  var btn = document.getElementById('submitBtn');
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Bhej rahe hain...';
+  btn.disabled = true;
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function (r) {
+    if (r.ok) {
+      form.reset();
+      document.getElementById('admissionSuccess').style.display = 'block';
+      btn.innerHTML = '<i class="fas fa-check"></i> Submitted!';
+      btn.style.background = 'linear-gradient(135deg,#059669,#047857)';
+      setTimeout(function () {
+        document.getElementById('admissionSuccess').style.display = 'none';
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Application';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 5000);
+    } else {
+      document.getElementById('admissionError').style.display = 'block';
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Application';
+      btn.disabled = false;
+    }
+  })
+  .catch(function () {
+    document.getElementById('admissionError').style.display = 'block';
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Application';
+    btn.disabled = false;
+  });
+  return false;
+}
+</script>
+</body>
+</html>

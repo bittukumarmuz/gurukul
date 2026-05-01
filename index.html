@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aditya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Cinzel+Decorative:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ==============================
+     NAVBAR
+============================== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="#home" class="nav-logo">
+      <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+      Aditya Ranker <span>Gurukul</span>
+    </a>
+
+    <!-- Desktop menu — scroll to section -->
+    <ul class="nav-menu" id="desktopMenu">
+      <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#courses"><i class="fas fa-book-open"></i> Courses &amp; Facility</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About </a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact us</a></li>
+    </ul>
+
+    <!-- Right side -->
+    <div class="nav-right">
+      <button class="btn-register" onclick="openModal()">Register / Login</button>
+      <!-- Hamburger -->
+      <div class="hamburger" id="hamburger" onclick="toggleDropdown()">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    3-LINE DROPDOWN MENU
+    Har link ek ALAG PAGE pe jaata hai (scroll nahi, new file open hogi)
+  -->
+  <ul class="dropdown-menu" id="dropdownMenu">
+    <li><a href="#home" onclick="closeDropdown()"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="admission.html" onclick="closeDropdown()"><i class="fas fa-user-plus"></i> Admission Form</a></li>
+    <li><a href="about.html" onclick="closeDropdown()"><i class="fas fa-info-circle"></i> About </a></li>
+    <li><a href="contact.html" onclick="closeDropdown()"><i class="fas fa-envelope"></i> Contact us</a></li>
+    <li><a href="result.html" onclick="closeDropdown()"><i class="fas fa-poll"></i> Result Check</a></li>
+  </ul>
+</nav>
+
+<!-- ==============================
+     NOTICE BAR
+============================== -->
+<div class="notice-bar" id="noticeBar">
+  <div class="container">
+    <div class="notice-inner">
+      <span class="notice-label">📢 NOTICE</span>
+      <div class="ticker-wrap">
+        <span class="ticker-text">
+          🎉 नए सत्र 2026-27 के लिए प्रवेश शुरू! &nbsp;|&nbsp;
+          📚 हर शनिवार Free Demo Class &nbsp;|&nbsp;
+          🏆 हमारे छात्रों ने जिला परीक्षा में Top किया! &nbsp;|&nbsp;
+          📱 YouTube पर Online Classes उपलब्ध &nbsp;|&nbsp;
+          📝 Class 10 का Result जारी — अभी Check करें! &nbsp;|&nbsp;
+          🌟 Special Doubt Clearing Session — हर रविवार सुबह 10 बजे
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==============================
+     SECTION 1: HERO
+============================== -->
+<div style="height:10px;"></div>
+<section id="home">
+  <div class="particles" id="particles"></div>
+  <div class="container">
+    <div class="hero-content">
+
+      <!-- Big Institute Name -->
+      <div class="hero-institute-name">
+        <span class="institute-line-top">— Est. 2023 —</span>
+        <h1 class="institute-title">
+          <span class="inst-aditya">Aditya</span>
+          <span class="inst-ranker">Ranker</span>
+          <span class="inst-gurukul">Gurukul</span>
+        </h1>
+        <div class="institute-divider">
+          <span class="div-line"></span>
+          <i class="fas fa-graduation-cap div-icon"></i>
+          <span class="div-line"></span>
+        </div>
+      </div>
+
+      <div class="hero-badge"><i class="fas fa-star"></i> Trusted by 500+ Students</div>
+      <h2 class="hero-title">Your Path to <span>Excellence</span><br>Starts Here</h2>
+      <p class="hero-tagline">"सफलता वो नहीं जो आसानी से मिले, सफलता वो है जो मेहनत से कमाई जाए।"</p>
+      <p class="hero-desc">Aditya Ranker Gurukul — जहाँ लगन मिलती है प्रेरणा से। Class 1 से 12 तक, हर छात्र को मिलती है व्यक्तिगत देखभाल और बेहतरीन शिक्षा।</p>
+
+      <!-- Hindi Motivation Lines -->
+      <div class="motivation-box">
+        <p>🌟 "दुनिया में हर चीज पराई है,
+कोई अपना है तो वह सिर्फ पढ़ाई है।"</p>
+        <p>💪 "हर सुबह एक नया मौका है — उठो, पढ़ो, जीतो!"</p>
+        <p>🎯 "मंजिल उन्हें मिलती है जिनके सपनों में जान होती है।"</p>
+        <p>📚 "एक किताब, एक कलम — दुनिया बदल सकती है।"</p>
+      </div>
+
+      <div class="hero-btns">
+        <a href="admission.html" class="btn-primary"><i class="fas fa-user-plus"></i> Enroll Now</a>
+        <button class="btn-outline-white" onclick="scrollTo('courses')"><i class="fas fa-play-circle"></i> Explore Courses</button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num">300<span>+</span></div><div class="stat-label">Students Enrolled</div></div>
+        <div class="stat-item"><div class="stat-num">3<span>+</span></div><div class="stat-label">Years of Excellence</div></div>
+        <div class="stat-item"><div class="stat-num">90<span>%</span></div><div class="stat-label">Pass Rate</div></div>
+        <div class="stat-item"><div class="stat-num">6<span>+</span></div><div class="stat-label">Courses Offered</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right floating cards (desktop) -->
+  <div class="hero-image-side">
+    <div class="hero-card"><div class="card-icon">📚</div><h4>Offline + Online</h4><p>In-person ya YouTube — dono available.</p></div>
+    <div class="hero-card"><div class="card-icon">🏆</div><h4>Proven Results</h4><p>District toppers — har saal!</p></div>
+    <div class="hero-card"><div class="card-icon">🎯</div><h4>Personal Attention</h4><p>Chhote batches — individual focus.</p></div>
+  </div>
+</section>
+
+<!-- ==============================
+     SECTION 2: ABOUT COACHING
+============================== -->
+<section id="about-coaching" style="background:var(--offwhite);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Who We Are</div>
+      <h2 class="section-title">About <span>Aditya Ranker Gurukul</span></h2>
+      <div class="section-line"></div>
+      <p class="section-desc">Jahan gyan milta hai dedication se, aur students bante hain achievers.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-box reveal">
+        <!--
+          ★ COACHING PHOTO:
+          images/coaching.jpg rakho → comment hatao neeche ka, placeholder comment karo
+        -->
+        <!-- <img src="images/coaching.jpg" alt="Coaching" style="width:100%;height:100%;object-fit:cover;"/> -->
+        <div class="placeholder-img">
+          <i class="fas fa-school"></i>
+          <p>📷 coaching.jpg</p>
+          <small>coaching images</small>
+        </div>
+        <div class="about-img-badge">Est. 2023<br><span>Shaping Futures</span></div>
+      </div>
+      <div class="reveal">
+        <h3 style="font-size:1.8rem;margin-bottom:14px;">Building Tomorrow's <span style="color:var(--accent)">Champions</span></h3>
+        <p style="color:var(--gray);line-height:1.8;margin-bottom:16px;">Aditya Ranker Gurukul ki sthapna ek lakshya ke saath ki gayi — quality education ko har gaanv tak pahunchana. Hamara manna hai ki har bachche mein talent hai, bas sahi disha chahiye.</p>
+        <p style="color:var(--gray);line-height:1.8;margin-bottom:24px;">Offline classes aur free YouTube lectures ke zariye ham aspiration aur achievement ke beech ki khaai ko paat rahe hain.</p>
+        <div class="about-features">
+          <div class="about-feature-item"><div class="feat-icon"><i class="fas fa-users"></i></div><div><h4>junior student</h4><p>Personal dhyan har student ko.</p></div></div>
+          <div class="about-feature-item"><div class="feat-icon"><i class="fab fa-youtube"></i></div><div><h4>YouTube Classes</h4><p>Kabhi bhi, kahin bhi seekho.</p></div></div>
+          <div class="about-feature-item"><div class="feat-icon"><i class="fas fa-file-alt"></i></div><div><h4>Free Notes</h4><p>Worksheets aur practice papers.</p></div></div>
+          <div class="about-feature-item"><div class="feat-icon"><i class="fas fa-comments"></i></div><div><h4>Doubt Solving</h4><p>Online aur offline dono.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     SECTION 3: TEACHER
+============================== -->
+<section id="teacher" style="background:#fff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Meet Your Mentor</div>
+      <h2 class="section-title">About <span>Aditya Sir</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="teacher-card reveal">
+      <div class="teacher-photo" style="padding:0;overflow:hidden;">
+  <img src="images/aditya-sir.jpg" 
+       alt="Aditya Sir" 
+       style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:18px;"/>
+</div>
+      <div class="teacher-info">
+        <h3>Aditya Sir</h3>
+        <div class="teacher-title"><i class="fas fa-chalkboard-teacher"></i> Lead Educator &amp; Founder</div>
+        <div class="exp-badge"><i class="fas fa-award"></i> 3+ Years Experience</div>
+        <p>Concept-based aur student-friendly teaching style. Har topic tab tak padhate hain jab tak samajh na aaye. Unka manna hai ki padhna tab hi sahi ho jab samajh ke ho.</p>
+        <p>Regular feedback, personal attention, aur har student ke liye unwavering support — yahi unki pehchaan hai.</p>
+        <div class="teacher-subjects">
+          <span class="subject-tag">Mathematics</span>
+          <span class="subject-tag">Science</span>
+          <span class="subject-tag">Social Studies</span>
+          <span class="subject-tag">Hindi</span>
+          <span class="subject-tag">English</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     SECTION 4: TOPPERS
+============================== -->
+<section id="toppers" style="background:var(--offwhite);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Our Pride</div>
+      <h2 class="section-title">Our <span>Star Toppers</span></h2>
+      <div class="section-line"></div>
+      <p class="section-desc">Meet the brilliant students who made us proud.</p>
+    </div>
+    <div class="toppers-grid reveal">
+
+      <div class="topper-card"><div class="topper-card-inner"><div class="topper-rank">🥇</div>
+        <div class="topper-photo">
+          <!-- <img src="images/topper1.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/> -->
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="topper-name">komal kumari</div><div class="topper-roll">Roll: 2600033</div><div class="topper-score">90% · Class 10</div>
+      </div></div>
+
+      <div class="topper-card"><div class="topper-card-inner"><div class="topper-rank">🥈</div>
+        <div class="topper-photo">
+          <!-- <img src="images/topper2.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/> -->
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="topper-name">Raja babu</div><div class="topper-roll">Roll: 2600089</div><div class="topper-score">85% · Class 10</div>
+      </div></div>
+
+      <div class="topper-card"><div class="topper-card-inner"><div class="topper-rank">🥉</div>
+        <div class="topper-photo">
+          <!-- <img src="images/topper3.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/> -->
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="topper-name">Neha kumari</div><div class="topper-roll">Roll: 260044</div><div class="topper-score">82.6% · Class 12</div>
+      </div></div>
+
+      <div class="topper-card"><div class="topper-card-inner"><div class="topper-rank">4</div>
+        <div class="topper-photo">
+  <img src="images/astuti4.jpg" alt="Topper Photo">
+</div>
+
+        <div class="topper-name">astuti kumari</div><div class="topper-roll">Roll: 2500060</div><div class="topper-score">81.8% · Class 10</div>
+      </div></div>
+
+      <div class="topper-card"><div class="topper-card-inner"><div class="topper-rank">5</div>
+        <div class="topper-photo">
+          <!-- <img src="images/topper5.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/> -->
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="topper-name">vikash kumar</div><div class="topper-roll">Roll: 2108</div><div class="topper-score">78.8% · Class 10</div>
+      </div></div>
+
+      
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     SECTION 5: COURSES
+============================== -->
+<section id="courses" style="background:#fff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">What We Teach</div>
+      <h2 class="section-title">Our <span>Courses</span></h2>
+      <div class="section-line"></div>
+      <p class="section-desc">Class 1 se 12 tak — Offline aur YouTube Online dono modes.</p>
+    </div>
+    <div class="courses-grid reveal">
+
+      <div class="course-card">
+        <div class="course-head"><span class="course-badge">Primary</span><div class="c-icon"><i class="fas fa-child"></i></div><h3>Classes 1 – 5</h3><p>Foundation building with fun methods</p></div>
+        <div class="course-body"><ul>
+          <li><i class="fas fa-check-circle"></i> Hindi, English, math</li>
+          <li><i class="fas fa-check-circle"></i> fun and play</li>
+          <li><i class="fas fa-check-circle"></i> Drawing &amp; Creative Activities</li>
+          <li><i class="fas fa-check-circle"></i> Moral Science &amp; GK</li>
+        </ul><div class="course-modes"><span class="mode-tag mode-offline">📍 Offline</span><span class="mode-tag mode-online">▶ YouTube</span></div></div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-head"><span class="course-badge">Middle</span><div class="c-icon"><i class="fas fa-book"></i></div><h3>Classes 6 – 8</h3><p>Concept strengthening</p></div>
+        <div class="course-body"><ul>
+          <li><i class="fas fa-check-circle"></i> Mathematics &amp; Science</li>
+          <li><i class="fas fa-check-circle"></i> Social Studies (History, Geo, Civics)</li>
+          <li><i class="fas fa-check-circle"></i> Hindi &amp; English Grammar</li>
+          <li><i class="fas fa-check-circle"></i> Sanskrit (Optional)</li>
+        </ul><div class="course-modes"><span class="mode-tag mode-offline">📍 Offline</span><span class="mode-tag mode-online">▶ YouTube</span></div></div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-head"><span class="course-badge">Board</span><div class="c-icon"><i class="fas fa-trophy"></i></div><h3>Classes 9 – 10</h3><p>Board exam preparation</p></div>
+        <div class="course-body"><ul>
+          <li><i class="fas fa-check-circle"></i> Mathematics (Full Syllabus)</li>
+          <li><i class="fas fa-check-circle"></i> Science – Physics, Chemistry, Bio</li>
+          <li><i class="fas fa-check-circle"></i> Social Science </li>
+          <li><i class="fas fa-check-circle"></i> Hindi + English + Sanskrit</li>
+        </ul><div class="course-modes"><span class="mode-tag mode-offline">📍 Offline</span><span class="mode-tag mode-online">▶ YouTube</span></div></div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-head"><span class="course-badge">Senior</span><div class="c-icon"><i class="fas fa-flask"></i></div><h3>Class 11–12 Science</h3><p>PCM / PCB mastery level</p></div>
+        <div class="course-body"><ul>
+          <li><i class="fas fa-check-circle"></i> Physics, Chemistry, Bio/Maths</li>
+          <li><i class="fas fa-check-circle"></i> NCERT + Board + Competitive</li>
+          <li><i class="fas fa-check-circle"></i> Regular Mock Tests</li>
+          <li><i class="fas fa-check-circle"></i> Answer Writing Practice</li>
+        </ul><div class="course-modes"><span class="mode-tag mode-offline">📍 Offline</span><span class="mode-tag mode-online">▶ YouTube</span></div></div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-head"><span class="course-badge">Senior</span><div class="c-icon"><i class="fas fa-landmark"></i></div><h3>Class 11–12 Arts</h3><p>History, PolSci, Geography</p></div>
+        <div class="course-body"><ul>
+          <li><i class="fas fa-check-circle"></i> History &amp; Political Science</li>
+          <li><i class="fas fa-check-circle"></i> Geography &amp; Economics</li>
+          <li><i class="fas fa-check-circle"></i> Hindi Literature &amp; English</li>
+          <li><i class="fas fa-check-circle"></i> Essay &amp; Answer Writing</li>
+        </ul><div class="course-modes"><span class="mode-tag mode-offline">📍 Offline</span><span class="mode-tag mode-online">▶ YouTube</span></div></div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-head" style="background:linear-gradient(135deg,#b45309,#d97706);"><span class="course-badge" style="background:#fff;color:#b45309;">Special</span><div class="c-icon"><i class="fas fa-star"></i></div><h3>Special Batches</h3><p>Weekend &amp; crash courses</p></div>
+        <div class="course-body"><ul>
+          <li><i class="fas fa-check-circle"></i> Weekend Doubt Classes</li>
+          <li><i class="fas fa-check-circle"></i> Pre-Board Crash Course</li>
+          <li><i class="fas fa-check-circle"></i> Competitive Exam Orientation</li>
+          <li><i class="fas fa-check-circle"></i> General Knowledge Sessions</li>
+        </ul><div class="course-modes"><span class="mode-tag mode-offline">📍 Offline</span><span class="mode-tag mode-online">▶ YouTube</span></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     SECTION 6: FEATURES (Notes + Doubts + Result)
+============================== -->
+<section id="features" style="background:var(--offwhite);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Student Portal</div>
+      <h2 class="section-title">Student <span>Features</span></h2>
+      <div class="section-line"></div>
+      <p class="section-desc">Notes, Doubts aur Result — sab ek jagah.</p>
+    </div>
+
+    <!-- Tab Buttons -->
+    <!-- Tab Buttons -->
+<div class="feature-tabs reveal">
+  <button class="tab-btn active" onclick="switchTab('admission')"><i class="fas fa-user-plus"></i> Admission Form</button>
+  <button class="tab-btn" onclick="switchTab('notes')"><i class="fas fa-file-pdf"></i> Notes</button>
+  <button class="tab-btn" onclick="switchTab('doubts')"><i class="fas fa-question-circle"></i> Doubts</button>
+  <button class="tab-btn" onclick="switchTab('result')"><i class="fas fa-poll"></i> Result Checker</button>
+</div>
+
+
+<!-- TAB: ADMISSION FORM -->
+<div class="tab-content active" id="tab-admission">
+  <div class="form-card reveal">
+    <h3>📋 Admission Form</h3>
+    <p class="form-sub">Sabhi * fields zaroori hain.</p>
+
+    <form id="admissionForm"
+          action="https://formspree.io/f/xkokrydq"
+          method="POST"
+          onsubmit="return handleAdmission(this)">
+
+      <input type="hidden" name="_subject" value="🎓 New Admission – Aditya Ranker Gurukul"/>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label><i class="fas fa-user"></i> Student Name *</label>
+          <input type="text" name="Student Name" id="studentName" placeholder="Poora naam" required/>
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-user-tie"></i> Father's Name *</label>
+          <input type="text" name="Father Name" id="fatherName" placeholder="Pita ji ka naam" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label><i class="fas fa-phone"></i> Contact Number *</label>
+          <input type="tel" name="Contact Number" id="contact" placeholder="10-digit number" maxlength="10" required/>
+        </div>
+        <div class="form-group">
+          <label><i class="fas fa-graduation-cap"></i> Class *</label>
+          <select name="Class" id="classSelect" required>
+            <option value="">-- Class Chunein --</option>
+            <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+            <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+            <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+            <option>Class 10</option>
+            <option>Class 11 – Science</option><option>Class 11 – Arts</option>
+            <option>Class 12 – Science</option><option>Class 12 – Arts</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label><i class="fas fa-map-marker-alt"></i> Village / Area *</label>
+        <input type="text" name="Village" id="village" placeholder="Gaanv ya area ka naam" required/>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <i class="fas fa-paper-plane"></i> Submit Application
+      </button>
+
+      <div class="success-msg" id="admissionSuccess">
+        <i class="fas fa-check-circle"></i>
+        आवेदन सफलतापूर्वक भेज दिया गया! 🎉
+        <br><small>Aditya Sir 24 ghante mein contact karenge.</small>
+      </div>
+      <div class="error-msg" id="admissionError">
+        <i class="fas fa-times-circle"></i> Kuch galat hua. Dobara try karein.
+      </div>
+    </form>
+  </div>
+</div>
+
+
+    <!-- TAB: NOTES -->
+    <div class="tab-content" id="tab-notes">
+      <div class="reveal">
+        <!-- Coming Soon Banner -->
+        <div style="background:linear-gradient(135deg,var(--primary),#0f3460);color:#fff;border-radius:16px;padding:32px;text-align:center;margin-bottom:32px;">
+          <div style="font-size:2.5rem;margin-bottom:10px;">📚</div>
+          <h3 style="font-size:1.4rem;margin-bottom:8px;">Notes Uploading soon...!</h3>
+          <p style="color:rgba(255,255,255,0.7);max-width:480px;margin:0 auto 18px;">notes currently not avilable on this website. till then contact on whatsapp!</p>
+          <a href="https://wa.me/917255013438?text=Hello%20Aditya%20Sir" 
+   target="_blank"
+   style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 22px;border-radius:25px;font-weight:600;font-size:0.9rem;">
+  <i class="fab fa-whatsapp"></i> contact on whatsapp
+</a>
+        </div>
+        <!-- Notes Grid -->
+        <div class="notes-grid">
+          <div class="note-card"><div class="note-card-top"><div class="note-icon"><i class="fas fa-file-pdf"></i></div><div><h4>Class 10 Maths – Ch.1</h4><p>Real Numbers | 12 pages</p></div></div><p>Euclid's Division Lemma, HCF &amp; LCM.</p><div class="note-actions"><button class="btn-download" onclick="notesNA()"><i class="fas fa-download"></i> Download</button></div></div>
+          <div class="note-card"><div class="note-card-top"><div class="note-icon"><i class="fas fa-file-pdf"></i></div><div><h4>Class 10 Science – Ch.1</h4><p>Chemical Reactions | 15 pages</p></div></div><p>Types of reactions, balancing equations.</p><div class="note-actions"><button class="btn-download" onclick="notesNA()"><i class="fas fa-download"></i> Download</button></div></div>
+          <div class="note-card"><div class="note-card-top"><div class="note-icon"><i class="fas fa-file-pdf"></i></div><div><h4>Class 9 History – Ch.1</h4><p>French Revolution | 10 pages</p></div></div><p>Timeline, causes, important events.</p><div class="note-actions"><button class="btn-download" onclick="notesNA()"><i class="fas fa-download"></i> Download</button></div></div>
+          <div class="note-card"><div class="note-card-top"><div class="note-icon"><i class="fas fa-file-pdf"></i></div><div><h4>Class 12 Physics – Ch.1</h4><p>Electrostatics | 20 pages</p></div></div><p>Coulomb's Law, Electric Field, Gauss.</p><div class="note-actions"><button class="btn-download" onclick="notesNA()"><i class="fas fa-download"></i> Download</button></div></div>
+          <div class="note-card"><div class="note-card-top"><div class="note-icon"><i class="fas fa-file-pdf"></i></div><div><h4>Class 8 Maths – Algebra</h4><p>Linear Equations | 8 pages</p></div></div><p>Variables, equations, word problems.</p><div class="note-actions"><button class="btn-download" onclick="notesNA()"><i class="fas fa-download"></i> Download</button></div></div>
+          <div class="note-card"><div class="note-card-top"><div class="note-icon"><i class="fas fa-file-pdf"></i></div><div><h4>Class 12 History – Ch.1</h4><p>Bricks &amp; Harappan | 18 pages</p></div></div><p>Harappan civilisation, maps &amp; key points.</p><div class="note-actions"><button class="btn-download" onclick="notesNA()"><i class="fas fa-download"></i> Download</button></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: DOUBTS -->
+    <div class="tab-content" id="tab-doubts">
+      <div class="doubt-layout reveal">
+        <!-- Submit Form -->
+        <div class="form-card" style="box-shadow:none;padding:0;">
+          <h3 style="margin-bottom:6px;">❓ Doubt Puchho</h3>
+          <p class="form-sub">Sirf 3 fields — simple aur fast! 5 din baad auto-delete.</p>
+          <div class="form-group"><label><i class="fas fa-user"></i> Aapka Naam *</label><input type="text" id="doubtName" placeholder="Apna naam"/></div>
+          <div class="form-group"><label><i class="fas fa-graduation-cap"></i> Class *</label>
+            <select id="doubtClass">
+              <option value="">-- Class Chunein --</option>
+              <option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option>
+              <option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option>
+              <option>Class 11 – Science</option><option>Class 11 – Arts</option>
+              <option>Class 12 – Science</option><option>Class 12 – Arts</option>
+            </select>
+          </div>
+          <div class="form-group"><label><i class="fas fa-question-circle"></i> Aapka Doubt *</label>
+            <textarea id="doubtText" rows="4" placeholder="Apna sawaal clearly likhein..." style="width:100%;padding:12px 14px;border:2px solid var(--lightgray);border-radius:10px;font-size:0.93rem;font-family:'DM Sans',sans-serif;resize:vertical;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--lightgray)'"></textarea>
+          </div>
+          <button class="btn-submit" onclick="submitDoubt()"><i class="fas fa-paper-plane"></i> Submit Doubt</button>
+          <p style="font-size:0.76rem;color:var(--gray);margin-top:10px;text-align:center;"><i class="fas fa-clock" style="color:var(--accent);"></i> Koi bhi reply kar sakta hai. 5 din baad auto-delete.</p>
+        </div>
+
+        <!-- Doubts List -->
+        <div>
+          <h3 style="margin-bottom:6px;">Recent Doubts</h3>
+          <p style="color:var(--gray);font-size:0.85rem;margin-bottom:16px;"><i class="fas fa-users" style="color:var(--accent);"></i> </p>
+          <div class="doubts-list" id="doubtsList">
+
+            <!-- <div class="doubt-item" data-id="d1">
+              <button class="delete-doubt" onclick="deleteDoubt('d1')"><i class="fas fa-times"></i></button>
+              <div class="doubt-meta"><i class="fas fa-user"></i> Rahul &nbsp;·&nbsp; <strong>Class 10</strong> &nbsp;·&nbsp; <i class="fas fa-clock"></i> 4 din 18 ghante</div>
+              <div class="doubt-q">Real Numbers mein HCF aur LCM mein kya fark hai?</div>
+              <div class="doubt-actions-row">
+                <button class="btn-ans-toggle" onclick="toggleReplies('d1')"><i class="fas fa-comment-dots"></i> Replies (1)</button>
+                <button class="btn-reply-open" onclick="openReplyBox('d1')"><i class="fas fa-reply"></i> Reply</button>
+              </div>
+              <div class="reply-list" id="replies-d1">
+                <div class="reply-item"><div class="reply-meta"><i class="fas fa-chalkboard-teacher" style="color:var(--accent);"></i> Aditya Sir</div>HCF sabse bada saamanye ghanak hai, LCM sabse chhota saamanye apavartya. HCF — distribute karna ho, LCM — events saath mile.</div>
+              </div>
+              <div class="reply-box" id="replybox-d1">
+                <textarea rows="2" id="replytext-d1" placeholder="Reply likhein..."></textarea>
+                <div class="reply-send-row"><input type="text" id="replyname-d1" placeholder="Aapka naam"/><button class="reply-btn" onclick="addReply('d1')"><i class="fas fa-paper-plane"></i> Send</button></div>
+              </div>
+            </div> -->
+
+            <!-- <div class="doubt-item" data-id="d2">
+              <button class="delete-doubt" onclick="deleteDoubt('d2')"><i class="fas fa-times"></i></button>
+              <div class="doubt-meta"><i class="fas fa-user"></i> Priya &nbsp;·&nbsp; <strong>Class 9</strong> &nbsp;·&nbsp; <i class="fas fa-clock"></i> 3 din 6 ghante</div>
+              <div class="doubt-q">Iron mein rust kyun lagta hai lekin gold mein nahi?</div>
+              <div class="doubt-actions-row"> -->
+                <!-- <button class="btn-ans-toggle" onclick="toggleReplies('d2')"><i class="fas fa-comment-dots"></i> Replies (1)</button>
+                <button class="btn-reply-open" onclick="openReplyBox('d2')"><i class="fas fa-reply"></i> Reply</button>
+              </div>
+              <div class="reply-list" id="replies-d2" style="display:none;">
+                <div class="reply-item"><div class="reply-meta"><i class="fas fa-chalkboard-teacher" style="color:var(--accent);"></i> Aditya Sir</div>Iron oxygen aur moisture se react karke rust banata hai. Gold noble metal hai — react nahi karta.</div>
+              </div>
+              <div class="reply-box" id="replybox-d2">
+                <textarea rows="2" id="replytext-d2" placeholder="Reply likhein..."></textarea>
+                <div class="reply-send-row"><input type="text" id="replyname-d2" placeholder="Aapka naam"/><button class="reply-btn" onclick="addReply('d2')"><i class="fas fa-paper-plane"></i> Send</button></div>
+              </div>
+            </div> -->
+
+          </div>
+          <div id="noDoubts" style="display:none;text-align:center;padding:36px;color:var(--gray);">
+            <i class="fas fa-comment-slash" style="font-size:2.5rem;color:var(--lightgray);display:block;margin-bottom:10px;"></i>
+            Koi doubt nahi abhi. Pehle puchho!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: RESULT -->
+    <div class="tab-content" id="tab-result">
+      <div class="result-card reveal">
+        <h3 style="font-size:1.6rem;margin-bottom:8px;">📊 Result Check</h3>
+        <p style="color:var(--gray);">Apna Roll Number enter karo.</p>
+        <p style="font-size:0.82rem;color:var(--accent);margin-top:4px;">Try: 1024, 1087, 2031, 1153, 2108, 1209</p>
+        <div class="result-input-wrap">
+          <input type="text" id="rollInput" placeholder="Roll Number daalo" maxlength="6"/>
+          <button class="btn-check" onclick="checkResult()"><i class="fas fa-search"></i> Check</button>
+        </div>
+        <div class="result-display" id="resultDisplay">
+          <div style="text-align:center;margin-bottom:14px;"><div id="resultGrade" class="result-grade"></div><div id="resultStatus" style="font-weight:700;font-size:1.05rem;"></div></div>
+          <div id="resultRows"></div>
+        </div>
+        <div class="result-not-found" id="resultNotFound"><i class="fas fa-times-circle"></i> Roll number nahi mila. Dobara check karo.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==============================
+     SECTION 7: CONTACT
+============================== -->
+<section id="contact" style="background:#fff;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Contact <span>Us</span></h2>
+      <div class="section-line"></div>
+      <p class="section-desc">any query we are here!</p>
+    </div>
+    <div class="contact-grid reveal">
+
+      <!-- Left: Info + Social + WhatsApp -->
+      <div>
+        <div class="contact-item"><div class="c-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Location</h4><p>Aditya Ranker Gurukul, Main Road,<br>kathaiya, muzaffarpur,  PIN-843124</p></div></div>
+        <div class="contact-item"><div class="c-icon"><i class="fas fa-phone-alt"></i></div><div><h4>Call Us</h4>
+          <!-- ★ APNA NUMBER DAALO -->
+          <p><a href="tel:+917255013438" style="color:var(--accent);font-weight:600;">+91 7255013438</a><br></p>
+        </div></div>
+        <div class="contact-item"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><p>aditya725501@gmail.com</p></div></div>
+        <div class="contact-item"><div class="c-icon"><i class="fas fa-clock"></i></div><div><h4>Class Timings</h4><p>Morning: 6 AM – 9 AM<br>Evening: 5 PM – 7 PM</p></div></div>
+
+        <!-- Social Media -->
+        <div class="social-section">
+          <h4>our Social Media</h4>
+          <div class="social-icons">
+            <!--
+              ★ SOCIAL LINKS — apna link daalo:
+              WhatsApp : wa.me/91 + 10 digit number
+              YouTube  : youtube.com/@ChannelName
+              Instagram: instagram.com/Handle
+              Facebook : facebook.com/PageName
+            -->
+            <a href="https://wa.me/917255013438?text=Hello%20Aditya%20Sir" target="_blank" class="social-icon si-whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.youtube.com/@adityakumar1889" target="_blank" class="social-icon si-youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/adityakumar87374?igsh=ZDRtZmR6NTN0enNz" target="_blank" class="social-icon si-instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1DtXur2f2G/" target="_blank" class="social-icon si-facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <!-- WhatsApp Quick Message -->
+        <div style="margin-top:28px;background:var(--offwhite);padding:22px;border-radius:14px;border:1px solid var(--lightgray);">
+          <h4 style="font-family:'DM Sans',sans-serif;font-weight:700;margin-bottom:12px;"><i class="fab fa-whatsapp" style="color:#25D366;margin-right:7px;"></i>Quick WhatsApp Message</h4>
+          <div class="form-group"><input type="text" id="qName" placeholder="Aapka naam"/></div>
+          <div class="form-group"><textarea id="qMsg" rows="3" placeholder="Apna message likhein..." style="width:100%;padding:10px 13px;border:2px solid var(--lightgray);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.92rem;resize:none;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--lightgray)'"></textarea></div>
+          <!--
+            ★ WHATSAPP NUMBER:
+            sendWhatsApp() function mein 917255013438 ki jagah apna number daalo
+            script.js mein line dhundo: wa.me/917255013438
+          -->
+          <button class="btn-submit" style="margin-top:4px;" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i>sent on WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- Right: Map -->
+      <div>
+        <!-- ★ GOOGLE MAP — Tumhara link already add hai! -->
+        <div style="border-radius:18px;overflow:hidden;height:380px;box-shadow:0 8px 32px rgba(0,0,0,0.1);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.017801828258!2d85.09998157570497!3d26.196099177081535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed2f49bbdac69b%3A0x24b163a22a8868c4!2sBittu&#39;s%20Home!5e0!3m2!1sen!2sin!4v1776504566804!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <a href="https://maps.google.com/maps?q=26.196099,85.099982" target="_blank"
+           style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;padding:12px;background:var(--primary);color:#fff;border-radius:12px;font-weight:600;font-size:0.92rem;transition:all 0.3s;">
+          <i class="fas fa-directions"></i> Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     FOOTER
+============================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="f-logo">Aditya Ranker <span>Gurukul</span></div>
+        <p>Class 1 se 12 tak — quality education, personal attention, aur unwavering support.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/917255013438?text=Hello%20Aditya%20Sir" target="_blank" class="social-icon si-whatsapp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.youtube.com/@adityakumar1889" target="_blank" class="social-icon si-youtube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/adityakumar87374?igsh=ZDRtZmR6NTN0enNz" target="_blank" class="social-icon si-instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1DtXur2f2G/" target="_blank" class="social-icon si-facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-coaching">About Us</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#toppers">Our Toppers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Student Portal</h5><ul>
+        <li><a href="admission.html">Admission Form</a></li>
+        <li><a href="#features" onclick="switchTab('notes')">Download Notes</a></li>
+        <li><a href="#features" onclick="switchTab('doubts')">Ask a Doubt</a></li>
+        <li><a href="#features" onclick="switchTab('result')">Result Check</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Classes</h5><ul>
+        <li><a href="#courses">Class 1–5</a></li>
+        <li><a href="#courses">Class 6–8</a></li>
+        <li><a href="#courses">Class 9–10</a></li>
+        <li><a href="#courses">Class 11–12 Science</a></li>
+        <li><a href="#courses">Class 11–12 Arts</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 <span>Aditya Ranker Gurukul</span>. All Rights Reserved.</p>
+      <p>Made with <span>❤️</span> by <span>GenCubix Tech Lab</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- LOGIN/REGISTER MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-tabs">
+      <div class="modal-tab active" id="mtab-login" onclick="switchModalTab('login')">Login</div>
+      <div class="modal-tab" id="mtab-register" onclick="switchModalTab('register')">Register</div>
+    </div>
+    <div class="modal-form active" id="mf-login">
+      <div class="form-group"><label><i class="fas fa-phone"></i> Mobile Number</label><input type="tel" placeholder="Mobile number"/></div>
+      <div class="form-group"><label><i class="fas fa-lock"></i> Password</label><input type="password" placeholder="Password"/></div>
+      <button class="btn-submit" onclick="alert('Coming soon!')"><i class="fas fa-sign-in-alt"></i> Login</button>
+      <p style="text-align:center;margin-top:12px;font-size:0.84rem;color:var(--gray);">No account? <a href="#" style="color:var(--accent);font-weight:600;" onclick="switchModalTab('register')">Register</a></p>
+    </div>
+    <div class="modal-form" id="mf-register">
+      <div class="form-group"><label><i class="fas fa-user"></i> Full Name</label><input type="text" placeholder="Full name"/></div>
+      <div class="form-group"><label><i class="fas fa-phone"></i> Mobile</label><input type="tel" placeholder="10-digit number"/></div>
+      <div class="form-group"><label><i class="fas fa-lock"></i> Password</label><input type="password" placeholder="Create password"/></div>
+      <button class="btn-submit" onclick="alert('Coming soon!')"><i class="fas fa-user-plus"></i> Register</button>
+    </div>
+  </div>
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>

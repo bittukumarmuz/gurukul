@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Result – Aditya Ranker Gurukul</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav id="navbar"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>Aditya Ranker <span>Gurukul</span></a>
+  <ul class="nav-menu" id="desktopMenu">
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="index.html#courses"><i class="fas fa-book-open"></i> Courses</a></li>
+    <li><a href="index.html#about-coaching"><i class="fas fa-info-circle"></i> About</a></li>
+    <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact us</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-register" onclick="openModal()">Register / Login</button>
+    <div class="hamburger" id="hamburger" onclick="toggleDropdown()"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  </div>
+</div>
+<ul class="dropdown-menu" id="dropdownMenu">
+  <li><a href="index.html" onclick="closeDropdown()"><i class="fas fa-home"></i> Home</a></li>
+  <li><a href="admission.html" onclick="closeDropdown()"><i class="fas fa-user-plus"></i> Admission Form</a></li>
+  <li><a href="about.html" onclick="closeDropdown()"><i class="fas fa-info-circle"></i> About</a></li>
+  <li><a href="contact.html" onclick="closeDropdown()"><i class="fas fa-envelope"></i> Contact us</a></li>
+  <li><a href="result.html" onclick="closeDropdown()"><i class="fas fa-poll"></i> Result Checker</a></li>
+</ul></nav>
+<div style="height:68px;"></div>
+<section style="padding:60px 0;background:var(--offwhite);min-height:calc(100vh - 68px);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Academic Results</div>
+      <h2 class="section-title">Result <span>Checker</span></h2>
+      <div class="section-line"></div>
+      <p class="section-desc">Roll number enter karo aur apna result dekho.</p>
+    </div>
+    <div class="result-card">
+      <h3 style="font-size:1.6rem;margin-bottom:8px;">📊 Result Checker</h3>
+      <p style="color:var(--gray);">Apna Roll Number enter karo.</p>
+      <p style="font-size:0.82rem;color:var(--accent);margin-top:4px;">Try: 1024, 1087, 2031, 1153, 2108, 1209</p>
+      <div class="result-input-wrap">
+        <input type="text" id="rollInput" placeholder="Roll Number" maxlength="6"/>
+        <button class="btn-check" onclick="checkResult()"><i class="fas fa-search"></i> Check</button>
+      </div>
+      <div class="result-display" id="resultDisplay">
+        <div style="text-align:center;margin-bottom:14px;"><div id="resultGrade" class="result-grade"></div><div id="resultStatus" style="font-weight:700;font-size:1.05rem;"></div></div>
+        <div id="resultRows"></div>
+      </div>
+      <div class="result-not-found" id="resultNotFound"><i class="fas fa-times-circle"></i> Roll number nahi mila.</div>
+    </div>
+  </div>
+</section>
+<footer><div class="container"><div class="footer-bottom" style="border:none;padding:20px 0;"><p>© 2024 <span>Aditya Ranker Gurukul</span>. All Rights Reserved.</p><p>Made with <span>❤️</span> by <span>GenCubix Tech Lab</span></p></div></div></footer>
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)"><div class="modal-box"><button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button><div class="modal-tabs"><div class="modal-tab active" id="mtab-login" onclick="switchModalTab('login')">Login</div><div class="modal-tab" id="mtab-register" onclick="switchModalTab('register')">Register</div></div><div class="modal-form active" id="mf-login"><div class="form-group"><label>Mobile</label><input type="tel" placeholder="Mobile"/></div><div class="form-group"><label>Password</label><input type="password" placeholder="Password"/></div><button class="btn-submit" onclick="alert('Coming soon!')">Login</button></div><div class="modal-form" id="mf-register"><div class="form-group"><label>Name</label><input type="text" placeholder="Name"/></div><div class="form-group"><label>Mobile</label><input type="tel" placeholder="Mobile"/></div><div class="form-group"><label>Password</label><input type="password" placeholder="Password"/></div><button class="btn-submit" onclick="alert('Coming soon!')">Register</button></div></div></div>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+<script src="script.js"></script>
+<script>
+var resultsDB={'1024':{name:'Anjali Sharma',cls:'Class 10',maths:98,science:99,hindi:97,english:98,social:100,total:492,grade:'A+',status:'PASS'},'1087':{name:'Rohan Verma',cls:'Class 10',maths:95,science:97,hindi:96,english:98,social:97,total:483,grade:'A+',status:'PASS'},'2031':{name:'Priya Yadav',cls:'Class 12',maths:92,science:98,hindi:96,english:95,social:97,total:478,grade:'A+',status:'PASS'},'1153':{name:'Suresh Kumar',cls:'Class 10',maths:93,science:94,hindi:95,english:96,social:99,total:477,grade:'A+',status:'PASS'},'2108':{name:'Kavita Singh',cls:'Class 12',maths:91,science:93,hindi:97,english:95,social:98,total:474,grade:'A+',status:'PASS'},'1209':{name:'Amit Patel',cls:'Class 10',maths:90,science:92,hindi:94,english:93,social:94,total:463,grade:'A',status:'PASS'}};
+function checkResult(){var roll=document.getElementById('rollInput').value.trim();var d=document.getElementById('resultDisplay');var nf=document.getElementById('resultNotFound');d.classList.remove('show');nf.style.display='none';if(!roll){alert('Roll number daalo!');return;}var r=resultsDB[roll];if(!r){nf.style.display='block';return;}document.getElementById('resultGrade').textContent=r.grade;document.getElementById('resultStatus').innerHTML='<span style="color:'+(r.status==='PASS'?'#059669':'#dc2626')+'">'+r.status+'</span>';document.getElementById('resultRows').innerHTML='<div class="result-row"><span class="label">Student Name</span><span class="value">'+r.name+'</span></div><div class="result-row"><span class="label">Roll Number</span><span class="value">'+roll+'</span></div><div class="result-row"><span class="label">Class</span><span class="value">'+r.cls+'</span></div><div class="result-row"><span class="label">Mathematics</span><span class="value">'+r.maths+'/100</span></div><div class="result-row"><span class="label">Science</span><span class="value">'+r.science+'/100</span></div><div class="result-row"><span class="label">Hindi</span><span class="value">'+r.hindi+'/100</span></div><div class="result-row"><span class="label">English</span><span class="value">'+r.english+'/100</span></div><div class="result-row"><span class="label">Social Science</span><span class="value">'+r.social+'/100</span></div><div class="result-row"><span class="label">Total</span><span class="value" style="color:var(--accent);">'+r.total+'/500</span></div><div class="result-row"><span class="label">Percentage</span><span class="value">'+(r.total/5).toFixed(1)+'%</span></div>';d.classList.add('show');}
+document.getElementById('rollInput').addEventListener('keydown',function(e){if(e.key==='Enter')checkResult();});
+</script>
+</body>
+</html>

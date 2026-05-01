@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – Aditya Ranker Gurukul</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ===== CONTACT HERO ===== */
+    .contact-hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 55%,#0f3460 100%);padding:90px 0 60px;text-align:center;position:relative;overflow:hidden;}
+    .contact-hero::before{content:'';position:absolute;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(233,69,96,0.15) 0%,transparent 70%);top:-120px;right:-80px;animation:pulse 6s ease-in-out infinite;}
+    .contact-hero::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(245,166,35,0.10) 0%,transparent 70%);bottom:-80px;left:-60px;animation:pulse 8s ease-in-out infinite reverse;}
+    @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
+    .contact-hero-tag{display:inline-block;background:rgba(233,69,96,0.15);border:1px solid rgba(233,69,96,0.4);color:#e94560;padding:6px 18px;border-radius:25px;font-size:0.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;animation:fadeUp 0.8s ease both;}
+    .contact-hero h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);color:#fff;margin-bottom:14px;animation:fadeUp 0.9s 0.2s ease both;}
+    .contact-hero h1 span{color:#e94560;}
+    .contact-hero p{color:rgba(255,255,255,0.6);font-size:1rem;max-width:500px;margin:0 auto;line-height:1.7;animation:fadeUp 0.9s 0.35s ease both;position:relative;z-index:2;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+
+    /* ===== QUICK CONNECT STRIP ===== */
+    .quick-strip{background:#e94560;padding:0;}
+    .quick-strip-inner{display:flex;justify-content:center;flex-wrap:wrap;}
+    .qs-item{display:flex;align-items:center;gap:10px;padding:16px 28px;color:#fff;border-right:1px solid rgba(255,255,255,0.2);cursor:pointer;transition:background 0.2s;text-decoration:none;}
+    .qs-item:last-child{border:none;}
+    .qs-item:hover{background:rgba(0,0,0,0.1);}
+    .qs-item i{font-size:1.2rem;}
+    .qs-item span{font-size:0.88rem;font-weight:600;}
+    @media(max-width:600px){.qs-item{padding:12px 16px;}.qs-item span{display:none;}}
+
+    /* ===== MAIN CONTACT SECTION ===== */
+    .contact-main{padding:70px 0;background:#fff;}
+    .contact-main-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:start;}
+    @media(max-width:900px){.contact-main-grid{grid-template-columns:1fr;}}
+
+    /* Info Cards */
+    .info-cards{display:flex;flex-direction:column;gap:16px;margin-bottom:28px;}
+    .info-card{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border-radius:14px;background:#f8f6f2;border-left:4px solid #e94560;transition:transform 0.3s,box-shadow 0.3s;}
+    .info-card:hover{transform:translateX(5px);box-shadow:0 4px 18px rgba(233,69,96,0.12);}
+    .info-card .ic-icon{width:46px;height:46px;background:rgba(233,69,96,0.1);border-radius:11px;display:flex;align-items:center;justify-content:center;color:#e94560;font-size:1.15rem;flex-shrink:0;}
+    .info-card h4{font-size:0.9rem;font-family:'DM Sans',sans-serif;font-weight:700;margin-bottom:3px;}
+    .info-card p{color:#6b7280;font-size:0.85rem;line-height:1.5;}
+    .info-card a{color:#e94560;font-weight:600;text-decoration:none;}
+    .info-card a:hover{text-decoration:underline;}
+
+    /* Timing Box */
+    .timing-box{background:linear-gradient(135deg,#1a1a2e,#0f3460);border-radius:16px;padding:22px 24px;color:#fff;margin-bottom:24px;}
+    .timing-box h4{font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:14px;color:#f5a623;}
+    .timing-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.87rem;}
+    .timing-row:last-child{border:none;padding-bottom:0;}
+    .timing-row .day{color:rgba(255,255,255,0.6);}
+    .timing-row .time{color:#fff;font-weight:600;}
+    .timing-row .badge{background:#e94560;color:#fff;padding:2px 9px;border-radius:20px;font-size:0.73rem;font-weight:700;}
+
+    /* Social Section */
+    .social-connect{background:#f8f6f2;border-radius:16px;padding:22px 24px;}
+    .social-connect h4{font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:14px;color:#1a1a2e;}
+    .social-btns{display:flex;flex-direction:column;gap:10px;}
+    .social-btn{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;color:#fff;font-weight:600;font-size:0.9rem;transition:all 0.3s;text-decoration:none;}
+    .social-btn:hover{transform:translateX(5px);box-shadow:0 4px 14px rgba(0,0,0,0.15);}
+    .social-btn i{font-size:1.2rem;width:22px;text-align:center;}
+    .social-btn .sb-text{flex:1;}
+    .social-btn .sb-arrow{font-size:0.8rem;opacity:0.7;}
+    .sb-wa{background:#25D366;}.sb-yt{background:#FF0000;}.sb-ig{background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);}.sb-fb{background:#1877F2;}
+
+    /* ===== RIGHT: MESSAGE FORM ===== */
+    .msg-form-box{background:#fff;border-radius:20px;padding:36px;box-shadow:0 8px 32px rgba(26,26,46,0.10);border:1px solid #e5e7eb;}
+    .msg-form-box h3{font-size:1.4rem;margin-bottom:6px;}
+    .msg-form-box .form-sub{color:#6b7280;font-size:0.88rem;margin-bottom:24px;}
+    .mf-group{margin-bottom:18px;}
+    .mf-group label{display:block;font-size:0.86rem;font-weight:600;margin-bottom:7px;color:#1a1a2e;}
+    .mf-group label i{color:#e94560;margin-right:5px;}
+    .mf-group input,.mf-group select,.mf-group textarea{width:100%;padding:11px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:0.93rem;font-family:'DM Sans',sans-serif;transition:border-color 0.3s,box-shadow 0.3s;background:#fff;color:#1a1a2e;resize:none;}
+    .mf-group input:focus,.mf-group select:focus,.mf-group textarea:focus{outline:none;border-color:#e94560;box-shadow:0 0 0 3px rgba(233,69,96,0.1);}
+    .mf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media(max-width:540px){.mf-row{grid-template-columns:1fr;}}
+
+    /* Send buttons */
+    .send-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;}
+    .send-btn-email{width:100%;padding:12px;background:linear-gradient(135deg,#e94560,#c73652);color:#fff;border:none;border-radius:11px;font-size:0.93rem;font-weight:700;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:8px;}
+    .send-btn-email:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(233,69,96,0.4);}
+    .send-btn-wa{width:100%;padding:12px;background:#25D366;color:#fff;border:none;border-radius:11px;font-size:0.93rem;font-weight:700;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:8px;}
+    .send-btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,0.4);}
+    .msg-success{display:none;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:#059669;padding:13px 16px;border-radius:10px;text-align:center;font-weight:600;margin-top:14px;font-size:0.92rem;}
+
+    /* ===== MAP SECTION ===== */
+    .map-section{padding:0 0 70px;background:#fff;}
+    .map-wrapper{border-radius:20px;overflow:hidden;height:400px;box-shadow:0 8px 32px rgba(0,0,0,0.10);}
+    .map-wrapper iframe{width:100%;height:100%;border:0;display:block;}
+    .map-actions{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap;}
+    .map-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:25px;font-weight:600;font-size:0.9rem;transition:all 0.3s;}
+    .map-btn-primary{background:#1a1a2e;color:#fff;}
+    .map-btn-primary:hover{background:#e94560;transform:translateY(-2px);}
+    .map-btn-outline{border:2px solid #1a1a2e;color:#1a1a2e;}
+    .map-btn-outline:hover{background:#1a1a2e;color:#fff;transform:translateY(-2px);}
+
+    /* ===== FAQ SECTION ===== */
+    .faq-section{padding:70px 0;background:#f8f6f2;}
+    .faq-grid{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+    .faq-item{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.05);}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;cursor:pointer;font-weight:600;font-size:0.97rem;transition:background 0.2s;user-select:none;}
+    .faq-q:hover{background:#fef2f4;}
+    .faq-q i{color:#e94560;transition:transform 0.3s;font-size:0.9rem;}
+    .faq-q.open i{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;}
+    .faq-a.open{max-height:200px;padding:0 22px 18px;}
+    .faq-a p{color:#6b7280;font-size:0.9rem;line-height:1.7;}
+
+    /* Section header */
+    .sh{text-align:center;margin-bottom:44px;}
+    .sh .tag{display:inline-block;background:rgba(233,69,96,0.10);color:#e94560;padding:5px 16px;border-radius:20px;font-size:0.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
+    .sh h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:12px;}
+    .sh h2 span{color:#e94560;}
+    .sh .line{width:56px;height:4px;background:linear-gradient(90deg,#e94560,#f5a623);border-radius:2px;margin:0 auto 10px;}
+    .sh p{color:#6b7280;font-size:0.97rem;max-width:500px;margin:0 auto;}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+      Aditya Ranker <span>Gurukul</span>
+    </a>
+    <ul class="nav-menu" id="desktopMenu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="index.html"><i class="fas fa-book-open"></i> Courses</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="contact.html" class="active-link"><i class="fas fa-envelope"></i> Contact us</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn-register" onclick="openModal()">Register / Login</button>
+      <div class="hamburger" id="hamburger" onclick="toggleDropdown()">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+    </div>
+  </div>
+  <ul class="dropdown-menu" id="dropdownMenu">
+    <li><a href="index.html" onclick="closeDropdown()"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="admission.html" onclick="closeDropdown()"><i class="fas fa-user-plus"></i> Admission Form</a></li>
+    <li><a href="about.html" onclick="closeDropdown()"><i class="fas fa-info-circle"></i> About</a></li>
+    <li><a href="contact.html" onclick="closeDropdown()"><i class="fas fa-envelope"></i> Contact us</a></li>
+    <li><a href="result.html" onclick="closeDropdown()"><i class="fas fa-poll"></i> Result Checker</a></li>
+  </ul>
+</nav>
+<div style="height:68px;"></div>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="contact-hero-tag"><i class="fas fa-headset"></i> &nbsp;contactme</div>
+    <h1>Aditya <span>Ranker</span> gurukul</h1>
+    <p>Koi bhi sawaal ho — admission ke liye, courses ke liye, ya bas baat karni ho — hum hamesha available hain।</p>
+  </div>
+</div>
+
+<!-- QUICK CONNECT STRIP -->
+<div class="quick-strip">
+  <div class="quick-strip-inner">
+    <!-- ★ APNA NUMBER DAALO -->
+    <a href="tel:+917255013438" class="qs-item"><i class="fas fa-phone-alt"></i><span>Call Now</span></a>
+    <a href="https://wa.me/917255013438" target="_blank" class="qs-item"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+    <a href="mailto:aditya725501@gmail.com" class="qs-item"><i class="fas fa-envelope"></i><span>Email Us</span></a>
+    <a href="https://www.youtube.com/@adityakumar1889" target="_blank" class="qs-item"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+    <a href="https://www.instagram.com/adityakumar87374?igsh=ZDRtZmR6NTN0enNz" target="_blank" class="qs-item"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+  </div>
+</div>
+
+<!-- MAIN CONTACT -->
+<section class="contact-main">
+  <div class="container">
+    <div class="contact-main-grid">
+
+      <!-- LEFT: Info -->
+      <div>
+        <div class="sh" style="text-align:left;margin-bottom:28px;">
+          <div class="tag">Contact Info</div>
+          <h2 style="font-size:1.8rem;">Hamari <span>Jaankari</span></h2>
+          <div class="line" style="margin:10px 0;"></div>
+        </div>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="ic-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>address</h4>
+              <p>Aditya Ranker Gurukul, kathaiya,<br>motipur, muz – 843124</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <h4>Call </h4>
+              <!-- ★ APNA NUMBER DAALO -->
+              <p><a href="tel:+917255013438">+917255013438</a> (Aditya Sir)<br>
+              <a href="tel:+917255013438">+917255013438</a> (Office)</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email </h4>
+              <p><a href="mailto:aditya725501@gmail.com">aditya725501@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp </h4>
+              <!-- ★ APNA NUMBER DAALO -->
+              <p><a href="https://wa.me/917255013438" target="_blank">+91 7255013438</a><br>
+              Response: 1-2 ghante mein</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timing Box -->
+        <div class="timing-box">
+          <h4><i class="fas fa-clock" style="margin-right:8px;"></i>Class Timings</h4>
+          <div class="timing-row"><span class="day">Subah Batch</span><span class="time">6:00 AM – 9:00 AM</span></div>
+          <div class="timing-row"><span class="day">Shaam Batch</span><span class="time">5:00 PM – 8:00 PM</span></div>
+          <div class="timing-row"><span class="day">Office Hours</span><span class="time">9:00 AM – 5:00 PM</span></div>
+          <div class="timing-row"><span class="day">Sunday Doubt Session</span><span class="time badge">10 AM Free</span></div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-connect">
+          <h4><i class="fas fa-share-alt" style="color:#e94560;margin-right:8px;"></i>Social Media pe Follow Karein</h4>
+          <div class="social-btns">
+            <!-- ★ SOCIAL LINKS DAALO -->
+            <a href="https://wa.me/917255013438" target="_blank" class="social-btn sb-wa">
+              <i class="fab fa-whatsapp"></i><span class="sb-text">WhatsApp Group Join Karein</span><i class="fas fa-chevron-right sb-arrow"></i>
+            </a>
+            <a href="https://www.youtube.com/@adityakumar1889" target="_blank" class="social-btn sb-yt">
+              <i class="fab fa-youtube"></i><span class="sb-text">YouTube Channel Subscribe Karein</span><i class="fas fa-chevron-right sb-arrow"></i>
+            </a>
+            <a href="https://www.instagram.com/adityakumar87374?igsh=ZDRtZmR6NTN0enNz" target="_blank" class="social-btn sb-ig">
+              <i class="fab fa-instagram"></i><span class="sb-text">Instagram pe Follow Karein</span><i class="fas fa-chevron-right sb-arrow"></i>
+            </a>
+            <a href="https://www.facebook.com/share/1DtXur2f2G/" target="_blank" class="social-btn sb-fb">
+              <i class="fab fa-facebook-f"></i><span class="sb-text">Facebook Page Like Karein</span><i class="fas fa-chevron-right sb-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Message Form -->
+      <div>
+        <div class="msg-form-box">
+          <h3>✉️ Message Bhejein</h3>
+          <p class="form-sub">Apna sawaal likhein — hum jaldi jawab denge!</p>
+
+          <div class="mf-row">
+            <div class="mf-group">
+              <label><i class="fas fa-user"></i> Aapka Naam *</label>
+              <input type="text" id="msgName" placeholder="Poora naam"/>
+            </div>
+            <div class="mf-group">
+              <label><i class="fas fa-phone"></i> Mobile *</label>
+              <input type="tel" id="msgPhone" placeholder="10-digit number" maxlength="10"/>
+            </div>
+          </div>
+
+          <div class="mf-group">
+            <label><i class="fas fa-graduation-cap"></i> Aap Kiske Baare Mein Poochh Rahe Hain?</label>
+            <select id="msgTopic">
+              <option value="">-- Topic Chunein --</option>
+              <option>Admission Enquiry</option>
+              <option>Class 1–5 Information</option>
+              <option>Class 6–8 Information</option>
+              <option>Class 9–10 Information</option>
+              <option>Class 11–12 Science</option>
+              <option>Class 11–12 Arts</option>
+              <option>Fee Structure</option>
+              <option>YouTube Classes</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="mf-group">
+            <label><i class="fas fa-comment-alt"></i> Aapka Message *</label>
+            <textarea id="msgText" rows="5" placeholder="Apna sawaal ya message yahan likhein..."></textarea>
+          </div>
+
+          <div class="send-options">
+            <button class="send-btn-email" onclick="sendEmail()">
+              <i class="fas fa-paper-plane"></i> Email Bhejein
+            </button>
+            <button class="send-btn-wa" onclick="sendWhatsApp()">
+              <i class="fab fa-whatsapp"></i> WhatsApp Karein
+            </button>
+          </div>
+
+          <div class="msg-success" id="msgSuccess">
+            <i class="fas fa-check-circle"></i>
+            Message bhej diya! Hum jaldi contact karenge। 🎉
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP SECTION -->
+<section class="map-section">
+  <div class="container">
+    <div class="sh reveal">
+      <div class="tag">Location</div>
+      <h2>find <span>my </span>location </h2>
+      <div class="line"></div>
+      <p>Hamare coaching center ka pata — Google Maps pe dekhe ।</p>
+    </div>
+
+    <div class="map-wrapper reveal">
+      <!-- ★ TUMHARA MAP ALREADY ADD HAI! -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.017801828258!2d85.09998157570497!3d26.196099177081535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed2f49bbdac69b%3A0x24b163a22a8868c4!2sBittu&#39;s%20Home!5e0!3m2!1sen!2sin!4v1776504566804!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="map-actions">
+      <a href="https://maps.google.com/maps?q=26.196099,85.099982" target="_blank" class="map-btn map-btn-primary">
+        <i class="fas fa-directions"></i> Directions Lo
+      </a>
+      <!-- ★ APNA NUMBER DAALO -->
+      <a href="https://wa.me/917255013438?text=Namaste%20Sir!%20Main%20coaching%20center%20aana%20chahta%20hoon।" target="_blank" class="map-btn map-btn-outline">
+        <i class="fab fa-whatsapp"></i> Visit Schedule 
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="container">
+    <div class="sh reveal">
+      <div class="tag">FAQ</div>
+      <h2>Aksar Pooche Jaane Wale <span>Sawaal</span></h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="faq-grid reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Admission ke liye kya karna hota hai?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <p>Hamari website pe Admission Form bharo ya seedha coaching aao। Form mein student ka naam, pita ka naam, contact number, class aur gaanv ka naam chahiye। Aditya Sir 24 ghante mein contact karenge।</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Fees kitni hai?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <p>Fees class aur batch ke hisaab se alag hoti hai। Sahi fees jaanne ke liye Aditya Sir se WhatsApp ya call pe seedha poochhen। Hum affordable education mein believe karte hain।</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>YouTube classes kab upload hoti hain?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <p>Har class ke baad lectures YouTube pe upload kiye jaate hain। Channel subscribe karein aur bell icon dabaayein taaki notification mile। Sabhi videos bilkul free hain।</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Doubt session kab hota hai?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <p>Har Ravivar subah 10 baje special free doubt clearing session hota hai। Iske alawa website ke Doubts section mein bhi apna sawaal submit kar sakte ho।</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Kya online classes bhi milti hain?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <p>Haan! Offline classes ke saath saath YouTube pe free online classes bhi available hain। Jo students door rehte hain woh YouTube se complete syllabus cover kar sakte hain।</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Notes kaise milenge?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-a">
+          <p>Enrolled students ko notes directly class mein milte hain। Website pe bhi jald hi notes upload honge। Tab tak WhatsApp pe contact karein।</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border:none;padding:20px 0;">
+      <p>© 2024 <span>Aditya Ranker Gurukul</span>. All Rights Reserved.</p>
+      <p>Made with <span>❤️</span> by <span>GenCubix Tech Lab</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-tabs">
+      <div class="modal-tab active" id="mtab-login" onclick="switchModalTab('login')">Login</div>
+      <div class="modal-tab" id="mtab-register" onclick="switchModalTab('register')">Register</div>
+    </div>
+    <div class="modal-form active" id="mf-login">
+      <div class="form-group"><label><i class="fas fa-phone"></i> Mobile</label><input type="tel" placeholder="Mobile"/></div>
+      <div class="form-group"><label><i class="fas fa-lock"></i> Password</label><input type="password" placeholder="Password"/></div>
+      <button class="btn-submit" onclick="alert('Coming soon!')"><i class="fas fa-sign-in-alt"></i> Login</button>
+    </div>
+    <div class="modal-form" id="mf-register">
+      <div class="form-group"><label><i class="fas fa-user"></i> Name</label><input type="text" placeholder="Full name"/></div>
+      <div class="form-group"><label><i class="fas fa-phone"></i> Mobile</label><input type="tel" placeholder="10-digit"/></div>
+      <div class="form-group"><label><i class="fas fa-lock"></i> Password</label><input type="password" placeholder="Password"/></div>
+      <button class="btn-submit" onclick="alert('Coming soon!')"><i class="fas fa-user-plus"></i> Register</button>
+    </div>
+  </div>
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+<script>
+/* FAQ Toggle */
+function toggleFaq(el) {
+  var ans = el.nextElementSibling;
+  var isOpen = el.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-q').forEach(function(q){ q.classList.remove('open'); });
+  document.querySelectorAll('.faq-a').forEach(function(a){ a.classList.remove('open'); });
+  // Open clicked
+  if (!isOpen) { el.classList.add('open'); ans.classList.add('open'); }
+}
+
+/* Validate helper */
+function validate() {
+  var name  = document.getElementById('msgName').value.trim();
+  var phone = document.getElementById('msgPhone').value.trim();
+  var text  = document.getElementById('msgText').value.trim();
+  if (!name || !phone || !text) { alert('⚠️ Naam, mobile aur message zaroori hai!'); return null; }
+  if (phone.length !== 10 || isNaN(phone)) { alert('⚠️ Valid 10-digit number daalo!'); return null; }
+  return { name, phone, text, topic: document.getElementById('msgTopic').value || 'General Enquiry' };
+}
+
+/* Send via Email (mailto) */
+function sendEmail() {
+  var d = validate(); if (!d) return;
+  var body = encodeURIComponent(
+    'Naam: ' + d.name + '\nMobile: ' + d.phone + '\nTopic: ' + d.topic + '\nMessage: ' + d.text
+  );
+  window.open('mailto:aditya725501@gmail.com?subject=Enquiry from ' + encodeURIComponent(d.name) + '&body=' + body);
+  document.getElementById('msgSuccess').style.display = 'block';
+  setTimeout(function(){ document.getElementById('msgSuccess').style.display='none'; }, 4000);
+}
+
+/* Send via WhatsApp */
+function sendWhatsApp() {
+  var d = validate(); if (!d) return;
+  var text = encodeURIComponent(
+    'Namaste Aditya Sir! 🙏\n\nMera naam *' + d.name + '* hai।\nMobile: ' + d.phone +
+    '\nTopic: ' + d.topic + '\n\n' + d.text
+  );
+  // ★ APNA NUMBER DAALO: 91XXXXXXXXXX ki jagah (e.g. 919876543210)
+  window.open('https://wa.me/917255013438?text=' + text, '_blank');
+}
+</script>
+</body>
+</html>
